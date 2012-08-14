@@ -83,6 +83,8 @@
 @property (nonatomic, readonly) NSArray * tokenTitles;
 
 - (void)updateContentSize;
+- (void)setSearchResultsVisible:(BOOL)visible;
+
 
 @end
 

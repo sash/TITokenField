@@ -17,7 +17,6 @@
 - (void)setup;
 - (NSString *)displayStringForRepresentedObject:(id)object;
 - (NSString *)searchResultStringForRepresentedObject:(id)object;
-- (void)setSearchResultsVisible:(BOOL)visible;
 - (void)resultsForSearchString:(NSString *)searchString;
 - (void)presentpopoverAtTokenFieldCaretAnimated:(BOOL)animated;
 @end
