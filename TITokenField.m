@@ -370,6 +370,7 @@ NSString * const kTextHidden = @"\u200D"; // Zero-Width Joiner
 @synthesize numberOfLines;
 @synthesize selectedToken;
 @synthesize tokenizingCharacters;
+@synthesize untokanizedFormat;
 
 #pragma mark Init
 - (id)initWithFrame:(CGRect)frame {
@@ -498,7 +499,7 @@ NSString * const kTextHidden = @"\u200D"; // Zero-Width Joiner
 			CGFloat availableWidth = self.bounds.size.width - self.leftView.bounds.size.width - self.rightView.bounds.size.width;
 			
 			if (tokens.count > 1 && untokSize.width > availableWidth){
-				untokenized = [NSString stringWithFormat:@"%d recipients", titles.count];
+				untokenized = [NSString stringWithFormat:(self.untokanizedFormat ? self.untokanizedFormat : @"%d recipients"), titles.count];
 			}
 			
 			[titles release];
