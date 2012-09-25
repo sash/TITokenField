@@ -159,7 +159,9 @@
 - (BOOL)canBecomeFirstResponder {
 	return YES;
 }
-
+- (BOOL)isFirstResponder{
+    return [tokenField isFirstResponder];
+}
 - (BOOL)becomeFirstResponder {
 	return [tokenField becomeFirstResponder];
 }
@@ -223,6 +225,7 @@
 
 - (void)tokenFieldDidEndEditing:(TITokenField *)field {
 	[self tokenFieldDidBeginEditing:field];
+    [self setSearchResultsVisible:NO];
 }
 
 - (void)tokenFieldTextDidChange:(TITokenField *)field {
