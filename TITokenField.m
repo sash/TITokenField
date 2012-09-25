@@ -209,9 +209,11 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
 	
 	id representedObject = [resultsArray objectAtIndex:indexPath.row];
-	TIToken * token = [tokenField addTokenWithTitle:[self displayStringForRepresentedObject:representedObject]];
-	[token setRepresentedObject:representedObject];
-	
+    
+	TIToken * token = [[TIToken alloc] initWithTitle:[self displayStringForRepresentedObject:representedObject]];
+    [token setRepresentedObject:representedObject];
+	[tokenField addToken:token];
+    
 	[tableView deselectRowAtIndexPath:indexPath animated:YES];
 	[self setSearchResultsVisible:NO];
 }
